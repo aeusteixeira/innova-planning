@@ -32,6 +32,56 @@
         .nav-link:hover {
             color: #0AE18C;
         }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .modal-content {
+            background-color: #1f2937;
+            margin: 3% auto;
+            padding: 0;
+            border: 1px solid #374151;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .modal-header {
+            background-color: #0AE18C;
+            color: #000;
+            padding: 20px 30px;
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .modal-body {
+            padding: 30px;
+            color: #fff;
+        }
+        
+        .close {
+            color: #000;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+        
+        .close:hover {
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
@@ -92,7 +142,7 @@
                         Excelência em <span class="highlight">Backoffice</span> sob Medida
                     </h1>
                     <p class="text-lg md:text-xl text-gray-300 mb-8">
-                        Alocação de profissionais qualificados para áreas administrativas, contábeis, jurídicas, financeiras, fiscais e de TI.
+                        Alocação de profissionais qualificados para as áreas administrativa, contábil, jurídica, financeira, fiscal e de TI.
                     </p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                         <a href="#contact" class="btn-primary px-8 py-3 rounded-full font-medium text-center">Solicite uma Proposta</a>
@@ -369,7 +419,7 @@
             
             <div class="flex flex-col lg:flex-row">
                 <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
-                    <form class="space-y-6">
+                    <form class="space-y-6"> 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-gray-300 mb-2">Nome</label>
@@ -455,12 +505,12 @@
                                 </div>
                                 <div class="ml-4">
                                     <h4 class="font-bold">E-mail</h4>
-                                    <p class="text-gray-400">contato@innovap.com.br</p>
+                                    <p class="text-gray-400">barbara@innovaplanning.com</p>
                                 </div>
                             </div>
                             
                             <!-- Social Media -->
-                            <div class="pt-6">
+                            <div class="pt-6 hidden">
                                 <h4 class="font-bold mb-4">Redes Sociais</h4>
                                 <div class="flex space-x-4">
                                     <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0AE18C] transition">
@@ -513,20 +563,20 @@
                     <div>
                         <h4 class="text-lg font-bold mb-4">Serviços</h4>
                         <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Administrativo</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Contábil e Fiscal</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Jurídico</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Financeiro</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">TI & Sistemas</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-[#0AE18C] transition">Administrativo</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-[#0AE18C] transition">Contábil e Fiscal</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-[#0AE18C] transition">Jurídico</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-[#0AE18C] transition">Financeiro</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-[#0AE18C] transition">TI & Sistemas</a></li>
                         </ul>
                     </div>
                     
                     <div>
                         <h4 class="text-lg font-bold mb-4">Legal</h4>
                         <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Termos de Uso</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Política de Privacidade</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Cookies</a></li>
+                            <li><a href="#" onclick="event.preventDefault(); openModal('termos-modal')" class="text-gray-400 hover:text-[#0AE18C] transition">Termos de Uso</a></li>
+                            <li><a href="#" onclick="event.preventDefault(); openModal('privacidade-modal')" class="text-gray-400 hover:text-[#0AE18C] transition">Política de Privacidade</a></li>
+                            <li><a href="#" onclick="event.preventDefault(); openModal('cookies-modal')" class="text-gray-400 hover:text-[#0AE18C] transition">Cookies</a></li>
                         </ul>
                     </div>
                 </div>
@@ -551,6 +601,102 @@
         </div>
     </footer>
 
+    <!-- Modals -->
+    <!-- Termos de Uso Modal -->
+    <div id="termos-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('termos-modal')">&times;</span>
+                <h2 class="text-2xl font-bold">Termos de Uso</h2>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">1. Aceitação dos Termos</h3>
+                <p class="mb-4 text-gray-300">Ao acessar e utilizar o site da Innova Planning, você concorda em cumprir estes termos de uso e todas as leis e regulamentos aplicáveis.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">2. Uso do Site</h3>
+                <p class="mb-4 text-gray-300">Este site é fornecido para fins informativos sobre nossos serviços de backoffice. Você pode visualizar, baixar e imprimir conteúdo do site apenas para uso pessoal e não comercial.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">3. Propriedade Intelectual</h3>
+                <p class="mb-4 text-gray-300">Todo o conteúdo deste site, incluindo textos, gráficos, logotipos, imagens e software, é propriedade da Innova Planning e está protegido por leis de direitos autorais e marcas registradas.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">4. Limitação de Responsabilidade</h3>
+                <p class="mb-4 text-gray-300">A Innova Planning não será responsável por quaisquer danos diretos, indiretos, incidentais ou consequenciais resultantes do uso ou incapacidade de usar este site.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">5. Modificações</h3>
+                <p class="mb-4 text-gray-300">Reservamo-nos o direito de modificar estes termos a qualquer momento. As modificações entrarão em vigor imediatamente após a publicação no site.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">6. Contato</h3>
+                <p class="text-gray-300">Para questões sobre estes termos, entre em contato conosco através do e-mail barbara@innovaplanning.com.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Política de Privacidade Modal -->
+    <div id="privacidade-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('privacidade-modal')">&times;</span>
+                <h2 class="text-2xl font-bold">Política de Privacidade</h2>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">1. Informações que Coletamos</h3>
+                <p class="mb-4 text-gray-300">Coletamos informações pessoais que você nos fornece voluntariamente, como nome, e-mail, telefone e empresa quando você preenche nosso formulário de contato ou solicita nossos serviços.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">2. Como Usamos suas Informações</h3>
+                <p class="mb-4 text-gray-300">Utilizamos suas informações para:</p>
+                <ul class="list-disc pl-6 mb-4 text-gray-300">
+                    <li>Responder às suas solicitações e fornecer nossos serviços</li>
+                    <li>Comunicar-nos com você sobre nossos serviços</li>
+                    <li>Melhorar nossos produtos e serviços</li>
+                    <li>Cumprir obrigações legais</li>
+                </ul>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">3. Compartilhamento de Informações</h3>
+                <p class="mb-4 text-gray-300">Não vendemos, trocamos ou transferimos suas informações pessoais para terceiros, exceto quando necessário para fornecer nossos serviços ou quando exigido por lei.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">4. Segurança dos Dados</h3>
+                <p class="mb-4 text-gray-300">Implementamos medidas de segurança adequadas para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">5. Seus Direitos</h3>
+                <p class="mb-4 text-gray-300">Você tem o direito de acessar, corrigir ou excluir suas informações pessoais. Para exercer esses direitos, entre em contato conosco.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">6. Contato</h3>
+                <p class="text-gray-300">Para questões sobre esta política de privacidade, entre em contato: barbara@innovaplanning.com.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookies Modal -->
+    <div id="cookies-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('cookies-modal')">&times;</span>
+                <h2 class="text-2xl font-bold">Política de Cookies</h2>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">1. O que são Cookies</h3>
+                <p class="mb-4 text-gray-300">Cookies são pequenos arquivos de texto armazenados em seu dispositivo quando você visita nosso site. Eles nos ajudam a melhorar sua experiência de navegação.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">2. Tipos de Cookies que Utilizamos</h3>
+                <p class="mb-4 text-gray-300"><strong>Cookies Essenciais:</strong> Necessários para o funcionamento básico do site.</p>
+                <p class="mb-4 text-gray-300"><strong>Cookies de Performance:</strong> Coletam informações sobre como você usa nosso site para melhorar sua funcionalidade.</p>
+                <p class="mb-4 text-gray-300"><strong>Cookies de Funcionalidade:</strong> Lembram suas preferências para personalizar sua experiência.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">3. Cookies de Terceiros</h3>
+                <p class="mb-4 text-gray-300">Utilizamos serviços de terceiros como Google Analytics para entender melhor como nosso site é utilizado. Estes serviços podem definir seus próprios cookies.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">4. Gerenciamento de Cookies</h3>
+                <p class="mb-4 text-gray-300">Você pode controlar e/ou excluir cookies conforme desejar através das configurações do seu navegador. No entanto, isso pode afetar a funcionalidade do site.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">5. Consentimento</h3>
+                <p class="mb-4 text-gray-300">Ao continuar navegando em nosso site, você consente com o uso de cookies conforme descrito nesta política.</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#0AE18C]">6. Contato</h3>
+                <p class="text-gray-300">Para questões sobre nossa política de cookies, entre em contato: barbara@innovaplanning.com.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
@@ -563,8 +709,8 @@
             mobileMenu.classList.toggle('hidden');
         });
         
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Smooth scrolling for anchor links (excluding modal links)
+        document.querySelectorAll('a[href^="#"]:not([onclick])').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 
@@ -583,6 +729,38 @@
                     }
                 }
             });
+        });
+        
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore background scrolling
+        }
+        
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
         });
     </script>
 </body>
