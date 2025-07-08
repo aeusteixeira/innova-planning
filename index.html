@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innova Planning - Mão de Obra Especializada em Backoffice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        .highlight {
+            color: #0AE18C;
+        }
+        .btn-primary {
+            background-color: #0AE18C;
+            color: #000;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(10, 225, 140, 0.2);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(10, 225, 140, 0.15);
+        }
+        .nav-link:hover {
+            color: #0AE18C;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed w-full bg-black bg-opacity-90 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-[#0AE18C] rounded-full flex items-center justify-center text-black font-bold text-xl">IP</div>
+                    <span class="ml-3 text-xl font-bold">Innova<span class="highlight">Planning</span></span>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-white hover:text-[#0AE18C] transition">Home</a>
+                    <a href="#about" class="nav-link text-white hover:text-[#0AE18C] transition">Sobre</a>
+                    <a href="#services" class="nav-link text-white hover:text-[#0AE18C] transition">Serviços</a>
+                    <a href="#diferenciais" class="nav-link text-white hover:text-[#0AE18C] transition">Diferenciais</a>
+                    <a href="#contact" class="nav-link text-white hover:text-[#0AE18C] transition">Contato</a>
+                </nav>
+                
+                <!-- Contact Button -->
+                <div class="hidden md:block">
+                    <a href="#contact" class="btn-primary px-6 py-2 rounded-full font-medium">Fale Conosco</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="nav-link text-white hover:text-[#0AE18C] transition">Home</a>
+                    <a href="#about" class="nav-link text-white hover:text-[#0AE18C] transition">Sobre</a>
+                    <a href="#services" class="nav-link text-white hover:text-[#0AE18C] transition">Serviços</a>
+                    <a href="#diferenciais" class="nav-link text-white hover:text-[#0AE18C] transition">Diferenciais</a>
+                    <a href="#contact" class="nav-link text-white hover:text-[#0AE18C] transition">Contato</a>
+                    <a href="#contact" class="btn-primary px-6 py-2 rounded-full font-medium text-center">Fale Conosco</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Excelência em <span class="highlight">Backoffice</span> sob Medida
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8">
+                        Alocação de profissionais qualificados para áreas administrativas, contábeis, jurídicas, financeiras, fiscais e de TI.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="btn-primary px-8 py-3 rounded-full font-medium text-center">Solicite uma Proposta</a>
+                        <a href="#services" class="border border-[#0AE18C] text-[#0AE18C] px-8 py-3 rounded-full font-medium text-center hover:bg-[#0AE18C] hover:text-black transition">Nossos Serviços</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-[#0AE18C] rounded-full opacity-20"></div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[#0AE18C] rounded-full opacity-20"></div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Profissionais de backoffice trabalhando" class="relative rounded-lg shadow-2xl z-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Sobre a <span class="highlight">Innova Planning</span></h2>
+                <div class="w-24 h-1 bg-[#0AE18C] mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Equipe Innova Planning" class="rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-gray-300 mb-6 text-lg">
+                        A Innova Planning nasceu da necessidade de oferecer <span class="highlight">excelência operacional</span> em serviços de backoffice, combinando expertise técnica com uma abordagem estratégica e personalizada.
+                    </p>
+                    <p class="text-gray-300 mb-6 text-lg">
+                        Nossa atuação vai além da simples alocação de profissionais - entendemos os desafios específicos de cada cliente para desenvolver <span class="highlight">soluções sob medida</span> que agregam valor real aos negócios.
+                    </p>
+                    <p class="text-gray-300 mb-8 text-lg">
+                        Com uma equipe altamente qualificada e processos otimizados, garantimos eficiência, segurança e conformidade em todas as nossas entregas.
+                    </p>
+                    <div class="flex items-center">
+                        <i data-lucide="award" class="w-8 h-8 text-[#0AE18C] mr-4"></i>
+                        <span class="text-gray-300">Certificada em excelência operacional e gestão de processos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6 bg-black">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossos <span class="highlight">Serviços</span></h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Soluções especializadas para todas as necessidades do seu backoffice
+                </p>
+                <div class="w-24 h-1 bg-[#0AE18C] mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-900 p-8 rounded-lg transition duration-300">
+                    <div class="w-16 h-16 bg-[#0AE18C] bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="clipboard-list" class="w-8 h-8 text-[#0AE18C]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Administrativo</h3>
+                    <p class="text-gray-400">
+                        Profissionais especializados em rotinas administrativas, secretariado, atendimento e suporte operacional.
+                    </p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-900 p-8 rounded-lg transition duration-300">
+                    <div class="w-16 h-16 bg-[#0AE18C] bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="calculator" class="w-8 h-8 text-[#0AE18C]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Contábil e Fiscal</h3>
+                    <p class="text-gray-400">
+                        Especialistas em contabilidade, fiscalidade, apuração de impostos e conformidade tributária.
+                    </p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-gray-900 p-8 rounded-lg transition duration-300">
+                    <div class="w-16 h-16 bg-[#0AE18C] bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="scale" class="w-8 h-8 text-[#0AE18C]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Jurídico</h3>
+                    <p class="text-gray-400">
+                        Suporte jurídico especializado em contratos, compliance, processos e assessoria legal.
+                    </p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-gray-900 p-8 rounded-lg transition duration-300">
+                    <div class="w-16 h-16 bg-[#0AE18C] bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="dollar-sign" class="w-8 h-8 text-[#0AE18C]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Financeiro</h3>
+                    <p class="text-gray-400">
+                        Gestão financeira, controle de fluxo de caixa, conciliação bancária e análise de crédito.
+                    </p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-gray-900 p-8 rounded-lg transition duration-300">
+                    <div class="w-16 h-16 bg-[#0AE18C] bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="server" class="w-8 h-8 text-[#0AE18C]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">TI & Sistemas</h3>
+                    <p class="text-gray-400">
+                        Suporte técnico, desenvolvimento de sistemas, análise de dados e infraestrutura de TI.
+                    </p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-gray-900 p-8 rounded-lg transition duration-300">
+                    <div class="w-16 h-16 bg-[#0AE18C] bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="puzzle" class="w-8 h-8 text-[#0AE18C]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Projetos Customizados</h3>
+                    <p class="text-gray-400">
+                        Soluções personalizadas para desafios específicos, com equipes multidisciplinares sob demanda.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais Section -->
+    <section id="diferenciais" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossos <span class="highlight">Diferenciais</span></h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    O que nos torna a melhor escolha para o seu backoffice
+                </p>
+                <div class="w-24 h-1 bg-[#0AE18C] mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Diferencial 1 -->
+                <div class="bg-black p-8 rounded-lg border border-gray-800 hover:border-[#0AE18C] transition">
+                    <div class="w-14 h-14 bg-[#0AE18C] rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="user-check" class="w-6 h-6 text-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Profissionais Especializados</h3>
+                    <p class="text-gray-400">
+                        Seleção rigorosa com foco em expertise técnica, experiência comprovada e fit cultural.
+                    </p>
+                </div>
+                
+                <!-- Diferencial 2 -->
+                <div class="bg-black p-8 rounded-lg border border-gray-800 hover:border-[#0AE18C] transition">
+                    <div class="w-14 h-14 bg-[#0AE18C] rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="settings" class="w-6 h-6 text-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Soluções Sob Medida</h3>
+                    <p class="text-gray-400">
+                        Diagnóstico personalizado para desenvolver a solução ideal para seu cenário específico.
+                    </p>
+                </div>
+                
+                <!-- Diferencial 3 -->
+                <div class="bg-black p-8 rounded-lg border border-gray-800 hover:border-[#0AE18C] transition">
+                    <div class="w-14 h-14 bg-[#0AE18C] rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="w-6 h-6 text-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Atendimento Ágil</h3>
+                    <p class="text-gray-400">
+                        Respostas rápidas e abordagem consultiva para tomada de decisão estratégica.
+                    </p>
+                </div>
+                
+                <!-- Diferencial 4 -->
+                <div class="bg-black p-8 rounded-lg border border-gray-800 hover:border-[#0AE18C] transition">
+                    <div class="w-14 h-14 bg-[#0AE18C] rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="refresh-cw" class="w-6 h-6 text-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Integração Completa</h3>
+                    <p class="text-gray-400">
+                        Nossos profissionais se integram perfeitamente aos seus processos e cultura organizacional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 px-6 bg-black">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Clientes <span class="highlight">Satisfeitos</span></h2>
+                <div class="w-24 h-1 bg-[#0AE18C] mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-900 p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-[#0AE18C] rounded-full flex items-center justify-center text-black font-bold">A</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Ana Carolina</h4>
+                            <p class="text-sm text-gray-400">Diretora Financeira</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "A Innova Planning revolucionou nosso backoffice financeiro. Em 3 meses já tínhamos otimizado 40% dos processos com sua equipe especializada."
+                    </p>
+                    <div class="flex mt-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-900 p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-[#0AE18C] rounded-full flex items-center justify-center text-black font-bold">R</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Ricardo Almeida</h4>
+                            <p class="text-sm text-gray-400">CEO</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "A solução sob medida que desenvolveram para nossa área jurídica nos permitiu escalar operações com segurança e conformidade total."
+                    </p>
+                    <div class="flex mt-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-900 p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-[#0AE18C] rounded-full flex items-center justify-center text-black font-bold">M</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Mariana Santos</h4>
+                            <p class="text-sm text-gray-400">Gerente de Operações</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "A integração dos profissionais da Innova foi perfeita. Em duas semanas já estavam totalmente alinhados com nossa cultura e processos internos."
+                    </p>
+                    <div class="flex mt-4">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Fale <span class="highlight">Conosco</span></h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Pronto para transformar seu backoffice? Entre em contato agora mesmo.
+                </p>
+                <div class="w-24 h-1 bg-[#0AE18C] mx-auto mt-4"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-300 mb-2">Nome</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0AE18C] focus:border-transparent" placeholder="Seu nome">
+                            </div>
+                            <div>
+                                <label for="company" class="block text-gray-300 mb-2">Empresa</label>
+                                <input type="text" id="company" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0AE18C] focus:border-transparent" placeholder="Sua empresa">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-gray-300 mb-2">E-mail</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0AE18C] focus:border-transparent" placeholder="seu@email.com">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-300 mb-2">Telefone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0AE18C] focus:border-transparent" placeholder="(00) 00000-0000">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="service" class="block text-gray-300 mb-2">Serviço de interesse</label>
+                            <select id="service" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0AE18C] focus:border-transparent">
+                                <option value="">Selecione um serviço</option>
+                                <option value="administrativo">Administrativo</option>
+                                <option value="contabil">Contábil e Fiscal</option>
+                                <option value="juridico">Jurídico</option>
+                                <option value="financeiro">Financeiro</option>
+                                <option value="ti">TI & Sistemas</option>
+                                <option value="projetos">Projetos Customizados</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-300 mb-2">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0AE18C] focus:border-transparent" placeholder="Descreva sua necessidade"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full py-3 rounded-full font-medium">Enviar Mensagem</button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-black p-8 rounded-lg h-full">
+                        <h3 class="text-2xl font-bold mb-6">Nossos <span class="highlight">Contatos</span></h3>
+                        
+                        <div class="space-y-6">
+                            <!-- RJ Address -->
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-[#0AE18C] rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-black"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold">Rio de Janeiro</h4>
+                                    <p class="text-gray-400">
+                                        Rua do Passeio, 38 - Setor 2, 15º andar<br>
+                                        Salas 1572 e 1577 - Centro<br>
+                                        CEP 20.021-290<br>
+                                        Tel: 21 3031 5700
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- SP Address -->
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-[#0AE18C] rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-black"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold">São Paulo</h4>
+                                    <p class="text-gray-400">
+                                        Al Rio Negro, 503 - conjunto 2005<br>
+                                        Alphaville Centro Industrial e Empresarial<br>
+                                        Barueri - SP<br>
+                                        CEP 06.454-000<br>
+                                        Tel: 21 3031 5700
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-[#0AE18C] rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="mail" class="w-5 h-5 text-black"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold">E-mail</h4>
+                                    <p class="text-gray-400">contato@innovap.com.br</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Social Media -->
+                            <div class="pt-6">
+                                <h4 class="font-bold mb-4">Redes Sociais</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0AE18C] transition">
+                                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0AE18C] transition">
+                                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0AE18C] transition">
+                                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0AE18C] transition">
+                                        <i data-lucide="youtube" class="w-5 h-5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-black">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-[#0AE18C] rounded-full flex items-center justify-center text-black font-bold text-xl">IP</div>
+                        <span class="ml-3 text-xl font-bold">Innova<span class="highlight">Planning</span></span>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">
+                        Excelência em backoffice sob medida. Soluções personalizadas para sua empresa.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-[#0AE18C] transition">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-[#0AE18C] transition">Sobre</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-[#0AE18C] transition">Serviços</a></li>
+                            <li><a href="#diferenciais" class="text-gray-400 hover:text-[#0AE18C] transition">Diferenciais</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-[#0AE18C] transition">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Serviços</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Administrativo</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Contábil e Fiscal</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Jurídico</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Financeiro</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">TI & Sistemas</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Termos de Uso</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Política de Privacidade</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-[#0AE18C] transition">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2023 Innova Planning. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-[#0AE18C] transition">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-[#0AE18C] transition">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-[#0AE18C] transition">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
