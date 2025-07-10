@@ -896,14 +896,14 @@
                     // Show loading state
                     this.setLoadingState(true);
                     
-                    // Simulate form submission (replace with actual submission logic)
-                    this.submitForm().then(() => {
-                        this.showMessage('success', 'Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                    // Submit form to PHP script
+                    this.submitForm().then((result) => {
+                        this.showMessage('success', result.message || 'Mensagem enviada com sucesso! Entraremos em contato em breve.');
                         form.reset();
                         this.initMathCaptcha(); // Generate new question
                         this.formStartTime = Date.now(); // Reset timer
                     }).catch((error) => {
-                        this.showMessage('error', 'Erro ao enviar mensagem. Tente novamente.');
+                        this.showMessage('error', error.message || 'Erro ao enviar mensagem. Tente novamente.');
                         console.error('Form submission error:', error);
                     }).finally(() => {
                         this.setLoadingState(false);
@@ -958,15 +958,26 @@
             }
             
             async submitForm() {
-                // Simulate API call - replace with your actual submission logic
-                return new Promise((resolve, reject) => {
-                    setTimeout(() => {
-                        // For demo purposes, always succeed
-                        // In production, replace with actual form submission
-                        console.log('Form submitted successfully');
-                        resolve();
-                    }, 2000);
-                });
+                const form = document.getElementById('contact-form');
+                const formData = new FormData(form);
+                
+                try {
+                    const response = await fetch('send_email.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (response.ok && result.success) {
+                        return Promise.resolve(result);
+                    } else {
+                        return Promise.reject(new Error(result.message || 'Erro desconhecido'));
+                    }
+                } catch (error) {
+                    console.error('Erro na requisição:', error);
+                    return Promise.reject(error);
+                }
             }
             
             setLoadingState(loading) {
